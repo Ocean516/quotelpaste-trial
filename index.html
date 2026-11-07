@@ -1,0 +1,129 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>报价贴 · 离线客户报价工具</title><style>:root{font-family:'Microsoft YaHei UI','Microsoft YaHei','PingFang SC',sans-serif;color:#243b6b;background:#edf3fd;--blue:#215cae;--line:#d9e3f1}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button,a{touch-action:manipulation}button{border:1px solid #b8cbe4;color:#243b6b;background:#fff;padding:10px 15px;border-radius:6px;cursor:pointer}button:hover{background:#edf3fd}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:var(--blue);color:white;border-color:var(--blue)}.primary:hover{background:#174a91}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #efb844;outline-offset:2px}input,select,textarea{border:1px solid #b8cbe4;border-radius:5px;color:#263c60;background:white;padding:9px;max-width:100%}header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:#fff;border-bottom:1px solid var(--line);gap:20px}h1{font-size:25px;margin:0 0 7px}header p{margin:0;color:#526987;font-size:13px}.edition{font-size:12px;text-align:right;line-height:1.8;flex-shrink:0}.edition strong{font-size:15px}.workspace{display:grid;grid-template-columns:minmax(390px,1fr) minmax(390px,1.1fr);max-width:1500px;gap:26px;margin:26px auto;padding:0 28px}.editor{min-width:0}.block{background:#fff;border:1px solid var(--line);border-radius:8px;padding:19px;margin-bottom:17px}h2{font-size:17px;margin:0 0 11px}h3{font-size:15px;margin:0 0 10px}p{line-height:1.7}.help{color:#5b6f8e;font-size:12px;margin:8px 0 12px}.source{width:100%;min-height:165px;resize:vertical;font-size:13px;line-height:1.8;white-space:pre}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.file-label{display:inline-block;font-size:13px;color:#215cae;padding:10px;cursor:pointer}.file-label input{display:none}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:7px;font-size:12px}.field.full{grid-column:1/-1}.field input{width:100%}.field small{font-size:11px;color:#5b6f8e}.check{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.6;margin:16px 0}.check input{margin-top:4px;accent-color:#215cae}.error{color:#ad3030;font-size:13px;margin:10px 0;white-space:pre-line}.notice{border-left:4px solid #e2af32;background:#fff0c7;padding:10px 13px;font-size:12px;line-height:1.7;margin-bottom:15px}.notice.blue{background:#e7f0ff;border-color:#215cae}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:9px 6px;vertical-align:middle}th{font-weight:500;color:#5b6f8e}.rows{overflow:auto;max-height:420px}.rows input[type=text]{width:100%;min-width:70px;padding:6px;font-size:12px}.rows td:nth-child(2){min-width:115px}.rows td:nth-child(3){min-width:100px}.rows td:nth-child(4){min-width:80px}.rows .bad{background:#fff0ee}.bad-note{font-size:11px;color:#ad3030;padding-bottom:7px}.amount{font-variant-numeric:tabular-nums;white-space:nowrap}.preview-wrap{min-width:0}.paper{background:#fff;box-shadow:0 4px 24px #24427312;min-height:450px;border-top:7px solid #215cae;padding:30px;color:#243b6b}.paper h2{font-size:24px;margin:0 0 6px;overflow-wrap:anywhere}.paper-head{display:flex;gap:15px;justify-content:space-between;align-items:start}.paper-title{font-size:14px;color:#5b6f8e}.paper-meta{font-size:12px;line-height:1.9;margin-top:18px;margin-bottom:23px;white-space:pre-line;overflow-wrap:anywhere}.paper table{font-size:13px}.paper th{background:#edf3fd}.paper td{padding:12px 9px;overflow-wrap:anywhere}.paper td:first-child{width:39%}.paper td:nth-child(2){width:37%}.paper th:last-child,.paper td:last-child{text-align:right}.paper-note{font-size:12px;line-height:1.8;color:#5b6f8e;white-space:pre-line;overflow-wrap:anywhere;margin-top:23px}.paper-footer{border-top:1px solid var(--line);padding-top:13px;margin-top:25px;font-size:11px;color:#6c7e97;display:flex;justify-content:space-between;gap:10px}.preview-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:13px;gap:10px}.status{font-size:12px;color:#526987;min-height:20px;margin-top:12px}.bottom-note{max-width:1444px;margin:10px auto 30px;padding:0 28px;color:#5b6f8e;font-size:12px;line-height:1.9}.empty{padding:35px 0;color:#6c7e97;text-align:center}.pill{color:#215cae;background:#edf3fd;padding:4px 8px;border-radius:4px;font-size:11px}.row-summary{font-size:12px;color:#5b6f8e;margin:8px 0}.muted{color:#7687a0}.print-only{display:none}[hidden]{display:none!important}@media(max-width:900px){.workspace{grid-template-columns:1fr;max-width:700px;margin:18px auto;padding:0 15px;gap:10px}header{padding:18px;align-items:start}h1{font-size:22px}.edition{max-width:130px}.paper{padding:23px 18px}.bottom-note{padding:0 18px}.fields{gap:10px}}@media print{body{background:white}header,.editor,.preview-label,.exports,.bottom-note,.notice,.status,.preview-help{display:none!important}.workspace{display:block;margin:0;padding:0;max-width:none}.paper{box-shadow:none;padding:15mm;border-top:5px solid #215cae;min-height:0}.preview-wrap{width:100%}.paper tr{break-inside:avoid}.paper table thead{display:table-header-group}@page{size:A4;margin:10mm}}
+</style></head><body>
+<header><div><h1>报价贴</h1><p>把进价表，变成可以发给客户的报价。</p></div><div class="edition"><strong id="edition-name">5条免费试用</strong><br><span id="edition-note">完整版 ¥49 买断，先试后买</span></div></header>
+<main class="workspace"><div class="editor">
+<section class="block"><h2>粘贴三列，开始整理</h2><p class="help">从 Excel / WPS 复制“商品、规格、成本价”三列，或导入 UTF-8 CSV。仅处理这三列；图片报价暂不支持。</p><textarea id="source" class="source" aria-label="商品、规格、成本价三列" placeholder="商品&#9;规格&#9;成本价&#10;轻舟A1&#9;8+128GB 黑色&#9;899.00" spellcheck="false"></textarea><div class="toolbar"><button class="primary" id="import">读取三列</button><button id="sample">填入示例</button><label class="file-label">导入 CSV<input id="file" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values"></label><button id="clear">清空本页</button></div><p id="import-error" class="error" role="alert"></p></section>
+<section class="block"><h2>设置本次加价</h2><div class="fields"><label class="field">每件固定加价（元）<input id="addition" type="text" inputmode="decimal" value="50.00"></label><label class="field">在成本上浮（%）<input id="percent" type="text" inputmode="decimal" value="0"><small>先按成本上浮，再加固定金额。</small></label><label class="field">向上取整<select id="rounding"><option value="0.01">保留到分</option><option value="1" selected>向上至整元</option><option value="10">向上至十元</option></select></label><label class="field">报价日期<input id="quote-date" type="date"></label></div><p class="help">上浮比例按成本计算，不是毛利率。每一项售价都在下方明示。</p><p id="rule-error" class="error" role="alert"></p></section>
+<section class="block"><h2>核对商品与售价</h2><p class="help">错误行会阻止导出。可取消勾选不需要的行；相同商品不会被自动合并。</p><div id="row-summary" class="row-summary"></div><div class="rows"><table><thead><tr><th>选中</th><th>商品</th><th>规格</th><th>成本</th><th>客户价</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="block"><h2>客户看到的抬头与备注</h2><div class="fields"><label class="field full">店铺 / 报价人<input id="shop" type="text" value="我的店铺" maxlength="60"></label><label class="field">客户称呼（可留空）<input id="customer" type="text" maxlength="60" placeholder="例如：王先生"></label><label class="field">联系说明（可留空）<input id="contact" type="text" maxlength="80" placeholder="例如：有需要请回复本条消息"></label><label class="field full">备注<textarea id="note" rows="3" maxlength="300">价格以本次确认的配置为准，下单前请确认库存与有效期。</textarea></label></div></section>
+</div><div class="preview-wrap"><div class="preview-label"><strong>客户报价预览</strong><span class="pill">只输出商品、规格、客户价</span></div><div class="notice" id="sample-notice">当前为合成示例，用于演示功能，不是市场行情或真实报价。</div><article class="paper" id="paper"><div class="paper-head"><div><h2 id="preview-shop">我的店铺</h2><div class="paper-title">商品报价单</div></div><span class="pill" id="preview-demo">合成示例</span></div><div class="paper-meta" id="preview-meta"></div><table><thead><tr><th>商品</th><th>规格</th><th>报价 / 元</th></tr></thead><tbody id="preview-rows"></tbody></table><p class="paper-note" id="preview-note"></p><div class="paper-footer"><span id="preview-count"></span><span>报价贴制作</span></div></article>
+<div class="block exports" style="margin-top:18px"><label class="check"><input id="confirm" type="checkbox"><span>我已核对本次选中商品、规格和客户售价，确认后导出。</span></label><div class="toolbar"><button id="png" class="primary">导出报价图片</button><button id="csv">导出客户 CSV</button><button id="copy">复制客户报价</button><button id="print">打印 / 存为 PDF</button></div><p class="help">单张图片最多50条；CSV和文本受当前版本条数限制。PDF通过浏览器打印窗口保存。成本列不会进入上述客户版本。</p><div id="export-status" class="status" role="status" aria-live="polite"></div></div><p class="help preview-help">本页不联网、不保存历史、不读取聊天、不自动发送报价。关闭或刷新前请自行导出需要的客户版本。完整版购买请联系向你提供此文件的卖方。</p></div></main>
+<footer class="bottom-note">报价贴 v1.0 · AI辅助开发。只整理你已经拥有的报价数据，不提供市场行情，也不处理图片、Excel工作簿公式、库存或税务发票。请使用电脑 Chrome / Edge 打开。试用包可核对最多5条；完整版单次最多500条。</footer>
+<script>window.QUOTE_EDITION='trial';</script><script>(function(scope){'use strict';
+function parseDelimited(text){
+ const clean=String(text).replace(/^\uFEFF/,'').replace(/\r\n?/g,'\n');
+ if(clean.length>500000)throw new Error('内容超过50万字符，请分批处理。');
+ const delimiter=clean.split('\n',1)[0].includes('\t')?'\t':',';
+ const rows=[];let row=[],field='',quoted=false,afterQuote=false;
+ for(let i=0;i<clean.length;i++){
+  const c=clean[i];
+  if(quoted){if(c==='"'&&clean[i+1]==='"'){field+='"';i++;}else if(c==='"'){quoted=false;afterQuote=true;}else field+=c;continue;}
+  if(afterQuote&&c!==delimiter&&c!=='\n'&&c!==' '&&c!=='\t')throw new Error('引号后的内容格式有误，请重新从表格复制三列。');
+  if(c==='"'&&!field&&!afterQuote){quoted=true;continue;}
+  if(c===delimiter||c==='\n'){row.push(field);field='';afterQuote=false;if(c==='\n'){if(row.some(x=>x.trim()))rows.push(row);row=[];}continue;}
+  if(!afterQuote)field+=c;
+ }
+ if(quoted)throw new Error('有未闭合的英文双引号，请检查CSV或重新复制表格。');
+ row.push(field);if(row.some(x=>x.trim()))rows.push(row);
+ if(rows.length>501)throw new Error('单次最多500条商品，请分批处理。');
+ return rows;
+}
+function cents(value){
+ const s=String(value).trim().replace(/^[¥￥]\s*/, '');
+ if(!/^(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?$/.test(s))throw new Error('价格须为非负数字，最多两位小数。');
+ const [whole,decimal='']=s.replaceAll(',','').split('.');
+ const n=BigInt(whole)*100n+BigInt(decimal.padEnd(2,'0'));
+ if(n>9999999999n)throw new Error('单价超过99,999,999.99元，请核对。');
+ return n;
+}
+function money(value){const n=BigInt(value);return (n/100n).toString()+'.'+(n%100n).toString().padStart(2,'0');}
+function quote(cost,addition,percent,rounding){
+ const c=cents(cost),a=cents(addition),p=cents(percent);
+ if(p>30000n)throw new Error('成本上浮比例须在0%至300%之间。');
+ const step=rounding==='10'?1000n:rounding==='1'?100n:1n;
+ const scaled=c*(10000n+p)+a*10000n;
+ const result=((scaled+step*10000n-1n)/(step*10000n))*step;
+ if(result>9999999999n)throw new Error('报价超过可处理金额，请调整规则。');
+ return result;
+}
+function importRows(text){
+ const table=parseDelimited(text);if(!table.length)throw new Error('请先粘贴商品、规格、成本三列。');
+ const header=table[0].map(x=>x.trim());
+ const hasHeader=/^(商品|商品名称|品名|型号|名称)$/.test(header[0]||'')&&/^(成本|成本价|进价|采购价|单价|价格)$/.test(header[2]||'');
+ const source=hasHeader?table.slice(1):table;
+ if(!source.length)throw new Error('只有表头，请再粘贴至少一条商品。');
+ return source.map((r,i)=>({id:i+1,line:i+(hasHeader?2:1),included:true,name:r[0]?.trim()||'',spec:r[1]?.trim()||'',cost:r[2]?.trim()||'',shapeError:r.length!==3?'每行须恰好三列：商品、规格、成本价。':'',error:'',price:''}));
+}
+function customerRows(rows,rule){
+ return rows.filter(r=>r.included).map(r=>{
+  if(r.shapeError)throw new Error('第'+r.line+'行：'+r.shapeError);
+  if(!r.name)throw new Error('第'+r.line+'行：商品名不能为空。');
+  if(r.name.length>80||r.spec.length>120)throw new Error('第'+r.line+'行：商品名或规格过长，请缩短。');
+  const amount=quote(r.cost,rule.addition,rule.percent,rule.rounding);
+  return {name:r.name,spec:r.spec,price:money(amount)};
+ });
+}
+function csvCell(value){let s=String(value);if(/^[\s]*[=+\-@]/.test(s)||/^[\t\r]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}
+function customerCSV(rows){return '\uFEFF'+[['商品','规格','客户报价（元）'],...rows.map(r=>[r.name,r.spec,r.price])].map(r=>r.map(csvCell).join(',')).join('\r\n');}
+scope.QuoteCore={parseDelimited,cents,money,quote,importRows,customerRows,customerCSV};
+if(typeof module!=='undefined')module.exports=scope.QuoteCore;
+})(typeof globalThis!=='undefined'?globalThis:window);
+</script><script>(()=>{'use strict';
+const Q=QuoteCore,$=id=>document.getElementById(id),full=window.QUOTE_EDITION==='full',limit=full?500:5;
+const sample='商品\t规格\t成本价\n轻舟A1\t8+128GB 黑色\t899.00\n轻舟A1\t8+256GB 蓝色\t999.50\n轻舟Pro\t12+256GB 银色\t1599.00\n远山耳机\t白色 标准版\t119.90\n行云充电器\t65W 双口\t79.00';
+let rows=[],sampleMode=true,validRows=[],lastError='',importedSource='';
+const value=id=>$(id).value.trim(),rule=()=>({addition:value('addition'),percent:value('percent'),rounding:value('rounding')});
+function setText(id,text){$(id).textContent=text;}
+function revokeConfirmation(){ $('confirm').checked=false;setText('export-status',''); }
+function setStatus(text,error=false){setText('export-status',text);$('export-status').style.color=error?'#ad3030':'#526987';}
+function readSource(isSample=false){try{rows=Q.importRows($('source').value);importedSource=$('source').value;sampleMode=isSample;setText('import-error','');revokeConfirmation();renderRows();render();}catch(e){setText('import-error',e.message);revokeConfirmation();rows=[];validRows=[];renderRows();render();}}
+function renderRows(){const tbody=$('rows');tbody.replaceChildren();for(const row of rows){const tr=document.createElement('tr');tr.dataset.rowId=row.id;
+ const checked=document.createElement('input');checked.type='checkbox';checked.checked=row.included;checked.setAttribute('aria-label','选中第'+row.line+'行');checked.addEventListener('change',()=>{row.included=checked.checked;revokeConfirmation();render();});const td=document.createElement('td');td.append(checked);tr.append(td);
+ for(const key of ['name','spec','cost']){const cell=document.createElement('td'),input=document.createElement('input');input.type='text';input.value=row[key];input.setAttribute('aria-label',({name:'商品',spec:'规格',cost:'成本'})[key]+'第'+row.line+'行');input.addEventListener('input',()=>{row[key]=input.value.trim();sampleMode=false;revokeConfirmation();render();});cell.append(input);tr.append(cell);}
+ const price=document.createElement('td');price.className='amount';price.dataset.price=row.id;tr.append(price);tbody.append(tr);
+ const errorRow=document.createElement('tr');errorRow.dataset.errorFor=row.id;const errorCell=document.createElement('td');errorCell.colSpan=5;errorCell.className='bad-note';errorRow.append(errorCell);tbody.append(errorRow);
+}}
+function render(){lastError='';validRows=[];let rulesValid=true;
+ try{Q.quote('0',value('addition'),value('percent'),value('rounding'));setText('rule-error','');}catch(e){lastError=e.message;rulesValid=false;setText('rule-error',e.message);}
+ for(const row of rows){row.error='';row.price='';if(row.included&&rulesValid){try{const item=Q.customerRows([row],rule())[0];row.price=item.price;validRows.push(item);}catch(e){row.error=e.message;lastError=lastError||e.message;}}
+ const tr=$('rows').querySelector('[data-row-id="'+row.id+'"]');tr?.classList.toggle('bad',!!row.error);const cell=$('rows').querySelector('[data-price="'+row.id+'"]');if(cell)cell.textContent=row.included?(row.price||'待核对'):'已排除';const er=$('rows').querySelector('[data-error-for="'+row.id+'"]');if(er){er.hidden=!row.error;er.firstChild.textContent=row.error;}}
+ const selected=rows.filter(r=>r.included).length;setText('row-summary','读取 '+rows.length+' 条，选中 '+selected+' 条'+(selected>limit?'；当前版本最多导出 '+limit+' 条，请取消勾选或选择完整版。':''));
+ setText('preview-shop',value('shop')||'我的店铺');setText('preview-meta','报价日期：'+(value('quote-date')||'未填写')+(value('customer')?'\n客户：'+value('customer'):'')+(value('contact')?'\n'+value('contact'):''));setText('preview-note',value('note'));
+ $('sample-notice').hidden=!sampleMode;$('preview-demo').hidden=!sampleMode;
+ const preview=$('preview-rows');preview.replaceChildren();for(const r of validRows){const tr=document.createElement('tr');for(const k of ['name','spec','price']){const td=document.createElement('td');td.textContent=r[k];if(k==='price')td.className='amount';tr.append(td);}preview.append(tr);}
+ if(!validRows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=3;td.className='empty';td.textContent='读取并核对商品后，这里会出现客户报价。';tr.append(td);preview.append(tr);}
+ setText('preview-count',validRows.length+'条商品'+(lastError?' · 有错误行，暂不可导出':'')+(sampleMode?' · 合成示例':''));
+}
+function guard(){if($('source').value!==importedSource)throw new Error('粘贴区有未读取的改动，请先点“读取三列”，再核对导出。');if(!rows.length)throw new Error('请先读取商品。');if(lastError)throw new Error('请修改错误行或取消勾选后再导出：'+lastError);const selected=rows.filter(r=>r.included).length;if(!selected)throw new Error('至少选中一条商品。');if(selected>limit)throw new Error('当前版本最多导出'+limit+'条。请减少选中条数，或联系卖方购买完整版。');if(!$('confirm').checked)throw new Error('请先勾选“我已核对”再导出。');return Q.customerRows(rows,rule());}
+function fileName(ext){return '客户报价_'+(value('quote-date')||'未填日期')+(sampleMode?'_合成示例':'')+'.'+ext;}
+function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function textQuote(data){return [value('shop')||'我的店铺','报价日期：'+(value('quote-date')||'未填写'),sampleMode?'【合成示例，非市场报价】':'',value('customer')?'客户：'+value('customer'):'',...data.map(r=>r.name+(r.spec?' / '+r.spec:'')+'：¥'+r.price),value('note'),value('contact')].filter(Boolean).join('\n');}
+function wrap(ctx,text,max){const result=[];for(const paragraph of String(text).split('\n')){let line='';for(const char of paragraph){if(ctx.measureText(line+char).width>max&&line){result.push(line);line=char;}else line+=char;}result.push(line);}return result;}
+async function exportPNG(data){
+ if(data.length>50)throw new Error('单张图片最多50条，请分批选中导出；CSV、文本与PDF可处理当前版本允许的全部条目。');
+ const canvas=document.createElement('canvas');canvas.width=1080;const ctx=canvas.getContext('2d');if(!ctx)throw new Error('当前浏览器无法生成图片，请换电脑Chrome或Edge。');
+ const font='"Microsoft YaHei UI","Microsoft YaHei",sans-serif';ctx.font='bold 40px '+font;const shopLines=wrap(ctx,value('shop')||'我的店铺',948);if(shopLines.length>2)throw new Error('抬头过长，请缩短店铺名后导出图片。');
+ ctx.font='24px '+font;const prepared=data.map(r=>({name:wrap(ctx,r.name,360),spec:wrap(ctx,r.spec,340),price:r.price}));const heights=prepared.map(r=>Math.max(68,Math.max(r.name.length,r.spec.length)*34+28));
+ const meta=[$('quote-date').value?'报价日期：'+value('quote-date'):'报价日期：未填写',value('customer')?'客户：'+value('customer'):'',value('contact')].filter(Boolean).flatMap(s=>wrap(ctx,s,948));
+ const notes=wrap(ctx,value('note'),948);const tableTop=78+shopLines.length*49+62+meta.length*35+16;canvas.height=tableTop+52+heights.reduce((s,n)=>s+n,0)+48+notes.length*34+34+70;
+ ctx.fillStyle='#fff';ctx.fillRect(0,0,1080,canvas.height);ctx.fillStyle='#215cae';ctx.fillRect(0,0,1080,14);ctx.fillStyle='#243b6b';ctx.font='bold 40px '+font;let y=78;shopLines.forEach(line=>{ctx.fillText(line,60,y);y+=49;});ctx.font='24px '+font;ctx.fillStyle='#5b6f8e';ctx.fillText('商品报价单'+(sampleMode?' · 合成示例，非市场报价':''),60,y+7);y+=62;for(const line of meta){ctx.fillText(line,60,y);y+=35;}y+=16;
+ ctx.fillStyle='#edf3fd';ctx.fillRect(60,y,960,52);ctx.fillStyle='#526987';ctx.fillText('商品',74,y+35);ctx.fillText('规格',456,y+35);ctx.textAlign='right';ctx.fillText('报价 / 元',1006,y+35);ctx.textAlign='left';y+=52;ctx.fillStyle='#243b6b';
+ prepared.forEach((r,i)=>{r.name.forEach((s,j)=>ctx.fillText(s,74,y+40+j*34));r.spec.forEach((s,j)=>ctx.fillText(s,456,y+40+j*34));ctx.textAlign='right';ctx.fillText(r.price,1006,y+40);ctx.textAlign='left';y+=heights[i];ctx.strokeStyle='#d9e3f1';ctx.beginPath();ctx.moveTo(60,y);ctx.lineTo(1020,y);ctx.stroke();});
+ y+=48;ctx.fillStyle='#5b6f8e';notes.forEach(s=>{ctx.fillText(s,60,y);y+=34;});y+=34;ctx.font='20px '+font;ctx.fillText(data.length+'条商品'+(sampleMode?' · 合成示例':''),60,y);ctx.textAlign='right';ctx.fillText('报价贴制作',1020,y);
+ await new Promise((resolve,reject)=>canvas.toBlob(blob=>{if(blob){download(blob,fileName('png'));resolve();}else reject(new Error('生成图片失败，请减少条数或改用CSV导出。'));},'image/png'));
+}
+function action(id,fn){$(id).addEventListener('click',async()=>{try{const data=guard();await fn(data);setStatus(id==='print'?'已打开打印窗口，请自行保存为PDF。':'客户版本已生成，请核对下载文件或粘贴结果。');}catch(e){setStatus(e.message,true);}});}
+action('png',exportPNG);action('csv',data=>download(new Blob([Q.customerCSV(data)],{type:'text/csv;charset=utf-8'}),fileName('csv')));
+action('copy',async data=>{const text=textQuote(data);try{await navigator.clipboard.writeText(text);}catch{const box=document.createElement('textarea');box.value=text;box.setAttribute('aria-label','待复制的客户报价');$('export-status').replaceChildren(box);box.select();if(!document.execCommand('copy'))throw new Error('复制未完成，请在下方文本框内手动复制。');box.remove();}});
+action('print',()=>window.print());
+window.addEventListener('beforeprint',()=>{try{guard();$('paper').hidden=false;}catch(e){$('paper').hidden=true;setStatus('打印已隐藏客户报价：'+e.message,true);}});window.addEventListener('afterprint',()=>{$('paper').hidden=false;});
+$('import').addEventListener('click',()=>readSource(false));$('sample').addEventListener('click',()=>{$('source').value=sample;readSource(true);});
+$('clear').addEventListener('click',()=>{if(!confirm('清空当前商品、客户和联系说明？本页没有自动保存。'))return;rows=[];validRows=[];$('source').value='';importedSource='';sampleMode=false;for(const id of ['customer','contact'])$(id).value='';setText('import-error','');revokeConfirmation();renderRows();render();});
+$('source').addEventListener('input',()=>{revokeConfirmation();setText('import-error','粘贴内容有改动，请点“读取三列”，再核对导出。');});
+for(const id of ['addition','percent','rounding','quote-date','shop','customer','contact','note'])$(id).addEventListener('input',()=>{revokeConfirmation();render();});
+$('file').addEventListener('change',async()=>{const file=$('file').files[0];if(!file)return;try{if(file.size>1000000)throw new Error('文件超过1MB，请分批导出CSV。');const text=await file.text();if(text.includes('\uFFFD'))throw new Error('文件可能不是UTF-8编码，请在表格软件中另存为UTF-8 CSV，或直接复制三列。');$('source').value=text;readSource(false);}catch(e){setText('import-error',e.message);revokeConfirmation();}finally{$('file').value='';}});
+const d=new Date();$('quote-date').value=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+if(full){setText('edition-name','完整版本 · 单次500条');setText('edition-note','本地使用，无账号、无订阅');}
+$('source').value=sample;readSource(true);
+})();
+</script></body></html>
